@@ -18,5 +18,8 @@ func main() {
 		fmt.Scanf("%d", &arr[i])
 	}
 
+	fmt.Println("array : ", arr)
+
+	mergesort(0,len(arr) - 1, arr)
 	
 }
