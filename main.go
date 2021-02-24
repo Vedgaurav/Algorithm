@@ -44,22 +44,7 @@ func createNode(data interface{}) *Node {
 	node.next = nil
 	return node
 }
-func AddNode(data interface{}, head *Node) {
-	for ; head.next != nil; head = head.next {
 
-	}
-	temp := createNode(data)
-	head.next = temp
-}
-func arrayToList(linkArr []interface{}) *Node {
-	head := createNode(linkArr[0])
-
-	for i := 1; i < len(linkArr); i++ {
-		AddNode(linkArr[i], head)
-	}
-	return head
-
-}
 func GetNth(head *Node, index int) interface{} {
 	if head == nil {
 		fmt.Println("Link list is empty")
@@ -388,7 +373,34 @@ func ListIsPalindromeWithStack(head *Node)int{
 	
 }
 func PalindromeWithReversingList(head *Node)bool{
-}CREATION
+	return false
+}
+func AddNode(data interface{}, head *Node) {
+	for ; head.next != nil; head = head.next {
+
+	}
+	temp := createNode(data)
+	head.next = temp
+}
+func arrayToList(linkArr []interface{}) *Node {
+	head := createNode(linkArr[0])
+
+	for i := 1; i < len(linkArr); i++ {
+		AddNode(linkArr[i], head)
+	}
+	return head
+
+}
+func main(){
+	llist:=[...]int{1,2,3,4,5}
+	array:=make([]interface{}, 0)
+	for _, value:=range llist{
+		array = append(array, value)
+	}
+	head:=arrayToList(array)
+	printList(head)
+
+
 	// head := createNode(1)
 	// node2 := createNode(2)
 	// node3 := createNode(3)
